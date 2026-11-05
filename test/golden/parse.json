@@ -1,0 +1,572 @@
+[
+ {
+  "input": "vless://11111111-2222-3333-4444-555555555555@fast-production-b6e1.up.railway.app:443?encryption=none&security=tls&sni=fast-production-b6e1.up.railway.app&fp=chrome&alpn=http%2F1.1&type=ws&host=fast-production-b6e1.up.railway.app&path=%2Fws%2F11111111-2222-3333-4444-555555555555#My%20Railway%20Config",
+  "expected": {
+   "uuid": "11111111-2222-3333-4444-555555555555",
+   "address": "fast-production-b6e1.up.railway.app",
+   "port": 443,
+   "domain": "fast-production-b6e1.up.railway.app",
+   "path": "/ws/11111111-2222-3333-4444-555555555555",
+   "security": "tls",
+   "type": "ws",
+   "name": "My Railway Config"
+  }
+ },
+ {
+  "input": "vless://11111111-2222-3333-4444-555555555555@example.com",
+  "expected": {
+   "uuid": "11111111-2222-3333-4444-555555555555",
+   "address": "example.com",
+   "port": 443,
+   "domain": "example.com",
+   "path": "/",
+   "security": "tls",
+   "type": "ws",
+   "name": "Clean Railway"
+  }
+ },
+ {
+  "input": "vless://no-at-sign",
+  "expected": null
+ },
+ {
+  "input": "https://example.com",
+  "expected": null
+ },
+ {
+  "input": "",
+  "expected": null
+ },
+ {
+  "input": "  vless://11111111-2222-3333-4444-555555555555@example.com:8443  ",
+  "expected": {
+   "uuid": "11111111-2222-3333-4444-555555555555",
+   "address": "example.com",
+   "port": 8443,
+   "domain": "example.com",
+   "path": "/",
+   "security": "tls",
+   "type": "ws",
+   "name": "Clean Railway"
+  }
+ },
+ {
+  "input": "vless://11111111-2222-3333-4444-555555555555@h.example:443#My+Name",
+  "expected": {
+   "uuid": "11111111-2222-3333-4444-555555555555",
+   "address": "h.example",
+   "port": 443,
+   "domain": "h.example",
+   "path": "/",
+   "security": "tls",
+   "type": "ws",
+   "name": "My Name"
+  }
+ },
+ {
+  "input": "vless://11111111-2222-3333-4444-555555555555@h.example:443#bad%ZZ",
+  "expected": null
+ },
+ {
+  "input": "vless://11111111-2222-3333-4444-555555555555@h.example:443#abc%4",
+  "expected": null
+ },
+ {
+  "input": "vless://11111111-2222-3333-4444-555555555555@h.example:443#%DA%A9%D8%A7%D9%86",
+  "expected": {
+   "uuid": "11111111-2222-3333-4444-555555555555",
+   "address": "h.example",
+   "port": 443,
+   "domain": "h.example",
+   "path": "/",
+   "security": "tls",
+   "type": "ws",
+   "name": "کان"
+  }
+ },
+ {
+  "input": "vless://11111111-2222-3333-4444-555555555555@h.example:99999999999",
+  "expected": {
+   "uuid": "11111111-2222-3333-4444-555555555555",
+   "address": "h.example",
+   "port": 443,
+   "domain": "h.example",
+   "path": "/",
+   "security": "tls",
+   "type": "ws",
+   "name": "Clean Railway"
+  }
+ },
+ {
+  "input": "vless://11111111-2222-3333-4444-555555555555@h.example:2147483647",
+  "expected": {
+   "uuid": "11111111-2222-3333-4444-555555555555",
+   "address": "h.example",
+   "port": 2147483647,
+   "domain": "h.example",
+   "path": "/",
+   "security": "tls",
+   "type": "ws",
+   "name": "Clean Railway"
+  }
+ },
+ {
+  "input": "vless://11111111-2222-3333-4444-555555555555@h.example:2147483648",
+  "expected": {
+   "uuid": "11111111-2222-3333-4444-555555555555",
+   "address": "h.example",
+   "port": 443,
+   "domain": "h.example",
+   "path": "/",
+   "security": "tls",
+   "type": "ws",
+   "name": "Clean Railway"
+  }
+ },
+ {
+  "input": "vless://11111111-2222-3333-4444-555555555555@h.example:-1",
+  "expected": {
+   "uuid": "11111111-2222-3333-4444-555555555555",
+   "address": "h.example",
+   "port": -1,
+   "domain": "h.example",
+   "path": "/",
+   "security": "tls",
+   "type": "ws",
+   "name": "Clean Railway"
+  }
+ },
+ {
+  "input": "vless://11111111-2222-3333-4444-555555555555@h.example:+8443",
+  "expected": {
+   "uuid": "11111111-2222-3333-4444-555555555555",
+   "address": "h.example",
+   "port": 8443,
+   "domain": "h.example",
+   "path": "/",
+   "security": "tls",
+   "type": "ws",
+   "name": "Clean Railway"
+  }
+ },
+ {
+  "input": "vless://11111111-2222-3333-4444-555555555555@h.example:443x",
+  "expected": {
+   "uuid": "11111111-2222-3333-4444-555555555555",
+   "address": "h.example",
+   "port": 443,
+   "domain": "h.example",
+   "path": "/",
+   "security": "tls",
+   "type": "ws",
+   "name": "Clean Railway"
+  }
+ },
+ {
+  "input": "vless://11111111-2222-3333-4444-555555555555@h.example:",
+  "expected": {
+   "uuid": "11111111-2222-3333-4444-555555555555",
+   "address": "h.example",
+   "port": 443,
+   "domain": "h.example",
+   "path": "/",
+   "security": "tls",
+   "type": "ws",
+   "name": "Clean Railway"
+  }
+ },
+ {
+  "input": "vless://11111111-2222-3333-4444-555555555555@h.example:٤٤٣",
+  "expected": {
+   "uuid": "11111111-2222-3333-4444-555555555555",
+   "address": "h.example",
+   "port": 443,
+   "domain": "h.example",
+   "path": "/",
+   "security": "tls",
+   "type": "ws",
+   "name": "Clean Railway"
+  }
+ },
+ {
+  "input": "vless://11111111-2222-3333-4444-555555555555@h.example#name?x=1",
+  "expected": null
+ },
+ {
+  "input": "vless://11111111-2222-3333-4444-555555555555@h.example?sni=s.example&host=other.example",
+  "expected": {
+   "uuid": "11111111-2222-3333-4444-555555555555",
+   "address": "h.example",
+   "port": 443,
+   "domain": "s.example",
+   "path": "/",
+   "security": "tls",
+   "type": "ws",
+   "name": "Clean Railway"
+  }
+ },
+ {
+  "input": "vless://11111111-2222-3333-4444-555555555555@h.example?host=other.example",
+  "expected": {
+   "uuid": "11111111-2222-3333-4444-555555555555",
+   "address": "h.example",
+   "port": 443,
+   "domain": "other.example",
+   "path": "/",
+   "security": "tls",
+   "type": "ws",
+   "name": "Clean Railway"
+  }
+ },
+ {
+  "input": "vless://11111111-2222-3333-4444-555555555555@h.example?PATH=%2Fabc&SNI=s2.example&Security=none&TYPE=grpc",
+  "expected": {
+   "uuid": "11111111-2222-3333-4444-555555555555",
+   "address": "h.example",
+   "port": 443,
+   "domain": "s2.example",
+   "path": "/abc",
+   "security": "none",
+   "type": "grpc",
+   "name": "Clean Railway"
+  }
+ },
+ {
+  "input": "vless://11111111-2222-3333-4444-555555555555@h.example?path=ws&sni=",
+  "expected": {
+   "uuid": "11111111-2222-3333-4444-555555555555",
+   "address": "h.example",
+   "port": 443,
+   "domain": "h.example",
+   "path": "ws",
+   "security": "tls",
+   "type": "ws",
+   "name": "Clean Railway"
+  }
+ },
+ {
+  "input": "vless://11111111-2222-3333-4444-555555555555@h.example?path=a+b%20c",
+  "expected": {
+   "uuid": "11111111-2222-3333-4444-555555555555",
+   "address": "h.example",
+   "port": 443,
+   "domain": "h.example",
+   "path": "a b c",
+   "security": "tls",
+   "type": "ws",
+   "name": "Clean Railway"
+  }
+ },
+ {
+  "input": "vless://11111111-2222-3333-4444-555555555555@h.example?noequals&x=1=2&path=%2Fp",
+  "expected": {
+   "uuid": "11111111-2222-3333-4444-555555555555",
+   "address": "h.example",
+   "port": 443,
+   "domain": "h.example",
+   "path": "/p",
+   "security": "tls",
+   "type": "ws",
+   "name": "Clean Railway"
+  }
+ },
+ {
+  "input": "vless://11111111-2222-3333-4444-555555555555@h.example?path=%E4%B8%AD%FF",
+  "expected": {
+   "uuid": "11111111-2222-3333-4444-555555555555",
+   "address": "h.example",
+   "port": 443,
+   "domain": "h.example",
+   "path": "中�",
+   "security": "tls",
+   "type": "ws",
+   "name": "Clean Railway"
+  }
+ },
+ {
+  "input": "vless://11111111-2222-3333-4444-555555555555@h.example#%E4%B8%AD%E6%96%87",
+  "expected": {
+   "uuid": "11111111-2222-3333-4444-555555555555",
+   "address": "h.example",
+   "port": 443,
+   "domain": "h.example",
+   "path": "/",
+   "security": "tls",
+   "type": "ws",
+   "name": "中文"
+  }
+ },
+ {
+  "input": "vless://11111111-2222-3333-4444-555555555555@h.example",
+  "expected": {
+   "uuid": "11111111-2222-3333-4444-555555555555",
+   "address": "h.example",
+   "port": 443,
+   "domain": "h.example",
+   "path": "/",
+   "security": "tls",
+   "type": "ws",
+   "name": "Clean Railway"
+  }
+ },
+ {
+  "input": "vless://11111111-2222-3333-4444-555555555555@[::1]:443",
+  "expected": {
+   "uuid": "11111111-2222-3333-4444-555555555555",
+   "address": "[",
+   "port": 443,
+   "domain": "[",
+   "path": "/",
+   "security": "tls",
+   "type": "ws",
+   "name": "Clean Railway"
+  }
+ },
+ {
+  "input": "vless://11111111-2222-3333-4444-555555555555@h.example:443#",
+  "expected": {
+   "uuid": "11111111-2222-3333-4444-555555555555",
+   "address": "h.example",
+   "port": 443,
+   "domain": "h.example",
+   "path": "/",
+   "security": "tls",
+   "type": "ws",
+   "name": ""
+  }
+ },
+ {
+  "input": "vless://11111111-2222-3333-4444-555555555555@fast-b.up.railway.app:443?security=tls&sni=fast-b.up.railway.app&type=ws&path=%2Fother#%DA%A9%D8%A7%D9%86%D9%81%DB%8C%DA%AF%20%D9%85%D9%86",
+  "expected": {
+   "uuid": "11111111-2222-3333-4444-555555555555",
+   "address": "fast-b.up.railway.app",
+   "port": 443,
+   "domain": "fast-b.up.railway.app",
+   "path": "/other",
+   "security": "tls",
+   "type": "ws",
+   "name": "کانفیگ من"
+  }
+ },
+ {
+  "input": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@core-production-93fa.up.railway.app:443?encryption=none&security=tls&sni=core-production-93fa.up.railway.app&fp=chrome&alpn=http%2F1.1&type=ws&host=core-production-93fa.up.railway.app&path=%2Fws%2F5163efd8-af8b-4275-965c-6e44be2932aa#%F0%9F%87%B3%F0%9F%87%B1Netherlands%20%2304",
+  "expected": {
+   "uuid": "5163efd8-af8b-4275-965c-6e44be2932aa",
+   "address": "core-production-93fa.up.railway.app",
+   "port": 443,
+   "domain": "core-production-93fa.up.railway.app",
+   "path": "/ws/5163efd8-af8b-4275-965c-6e44be2932aa",
+   "security": "tls",
+   "type": "ws",
+   "name": "🇳🇱Netherlands #04"
+  }
+ },
+ {
+  "input": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@fast-production-7d2a.up.railway.app:443?encryption=none&security=tls&sni=fast-production-7d2a.up.railway.app&type=ws&host=fast-production-7d2a.up.railway.app&path=%2F#RootPath",
+  "expected": {
+   "uuid": "5163efd8-af8b-4275-965c-6e44be2932aa",
+   "address": "fast-production-7d2a.up.railway.app",
+   "port": 443,
+   "domain": "fast-production-7d2a.up.railway.app",
+   "path": "/",
+   "security": "tls",
+   "type": "ws",
+   "name": "RootPath"
+  }
+ },
+ {
+  "input": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@fast-production-7d2a.up.railway.app:443?security=tls&sni=fast-production-7d2a.up.railway.app&type=ws&host=fast-production-7d2a.up.railway.app&path=ws#NoSlashPath",
+  "expected": {
+   "uuid": "5163efd8-af8b-4275-965c-6e44be2932aa",
+   "address": "fast-production-7d2a.up.railway.app",
+   "port": 443,
+   "domain": "fast-production-7d2a.up.railway.app",
+   "path": "ws",
+   "security": "tls",
+   "type": "ws",
+   "name": "NoSlashPath"
+  }
+ },
+ {
+  "input": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@fast-production-7d2a.up.railway.app:443?security=tls&type=ws&host=fast-production-7d2a.up.railway.app&path=%2Fws#NoSni",
+  "expected": {
+   "uuid": "5163efd8-af8b-4275-965c-6e44be2932aa",
+   "address": "fast-production-7d2a.up.railway.app",
+   "port": 443,
+   "domain": "fast-production-7d2a.up.railway.app",
+   "path": "/ws",
+   "security": "tls",
+   "type": "ws",
+   "name": "NoSni"
+  }
+ },
+ {
+  "input": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@fast-production-7d2a.up.railway.app:443?security=tls&sni=fast-production-7d2a.up.railway.app&type=ws&path=%2Fws#NoHost",
+  "expected": {
+   "uuid": "5163efd8-af8b-4275-965c-6e44be2932aa",
+   "address": "fast-production-7d2a.up.railway.app",
+   "port": 443,
+   "domain": "fast-production-7d2a.up.railway.app",
+   "path": "/ws",
+   "security": "tls",
+   "type": "ws",
+   "name": "NoHost"
+  }
+ },
+ {
+  "input": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@fast-production-7d2a.up.railway.app:443?security=tls&type=ws&path=%2Fws#NeitherSniNorHost",
+  "expected": {
+   "uuid": "5163efd8-af8b-4275-965c-6e44be2932aa",
+   "address": "fast-production-7d2a.up.railway.app",
+   "port": 443,
+   "domain": "fast-production-7d2a.up.railway.app",
+   "path": "/ws",
+   "security": "tls",
+   "type": "ws",
+   "name": "NeitherSniNorHost"
+  }
+ },
+ {
+  "input": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@fast-production-7d2a.up.railway.app:443?security=tls&sni=&type=ws&host=fast-production-7d2a.up.railway.app&path=%2Fws#EmptySni",
+  "expected": {
+   "uuid": "5163efd8-af8b-4275-965c-6e44be2932aa",
+   "address": "fast-production-7d2a.up.railway.app",
+   "port": 443,
+   "domain": "fast-production-7d2a.up.railway.app",
+   "path": "/ws",
+   "security": "tls",
+   "type": "ws",
+   "name": "EmptySni"
+  }
+ },
+ {
+  "input": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@fast-production-7d2a.up.railway.app:8443?security=tls&sni=fast-production-7d2a.up.railway.app&type=ws&host=fast-production-7d2a.up.railway.app&path=%2Fws#Port8443",
+  "expected": {
+   "uuid": "5163efd8-af8b-4275-965c-6e44be2932aa",
+   "address": "fast-production-7d2a.up.railway.app",
+   "port": 8443,
+   "domain": "fast-production-7d2a.up.railway.app",
+   "path": "/ws",
+   "security": "tls",
+   "type": "ws",
+   "name": "Port8443"
+  }
+ },
+ {
+  "input": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@fast-production-7d2a.up.railway.app?security=tls&sni=fast-production-7d2a.up.railway.app&type=ws&host=fast-production-7d2a.up.railway.app&path=%2Fws#NoPort",
+  "expected": {
+   "uuid": "5163efd8-af8b-4275-965c-6e44be2932aa",
+   "address": "fast-production-7d2a.up.railway.app",
+   "port": 443,
+   "domain": "fast-production-7d2a.up.railway.app",
+   "path": "/ws",
+   "security": "tls",
+   "type": "ws",
+   "name": "NoPort"
+  }
+ },
+ {
+  "input": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@fast-production-7d2a.up.railway.app:443?security=none&sni=fast-production-7d2a.up.railway.app&type=ws&host=fast-production-7d2a.up.railway.app&path=%2Fws#SecurityNone",
+  "expected": {
+   "uuid": "5163efd8-af8b-4275-965c-6e44be2932aa",
+   "address": "fast-production-7d2a.up.railway.app",
+   "port": 443,
+   "domain": "fast-production-7d2a.up.railway.app",
+   "path": "/ws",
+   "security": "none",
+   "type": "ws",
+   "name": "SecurityNone"
+  }
+ },
+ {
+  "input": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@fast-production-7d2a.up.railway.app:443?security=tls&sni=fast-production-7d2a.up.railway.app&type=ws&host=fast-production-7d2a.up.railway.app&path=%2Fws&flow=xtls-rprx-vision&pbk=abc123&sid=00#Extras",
+  "expected": {
+   "uuid": "5163efd8-af8b-4275-965c-6e44be2932aa",
+   "address": "fast-production-7d2a.up.railway.app",
+   "port": 443,
+   "domain": "fast-production-7d2a.up.railway.app",
+   "path": "/ws",
+   "security": "tls",
+   "type": "ws",
+   "name": "Extras"
+  }
+ },
+ {
+  "input": "vless://5163EFD8-AF8B-4275-965C-6E44BE2932AA@fast-production-7d2a.up.railway.app:443?security=tls&sni=fast-production-7d2a.up.railway.app&type=ws&host=fast-production-7d2a.up.railway.app&path=%2Fws#UpperUuid",
+  "expected": {
+   "uuid": "5163EFD8-AF8B-4275-965C-6E44BE2932AA",
+   "address": "fast-production-7d2a.up.railway.app",
+   "port": 443,
+   "domain": "fast-production-7d2a.up.railway.app",
+   "path": "/ws",
+   "security": "tls",
+   "type": "ws",
+   "name": "UpperUuid"
+  }
+ },
+ {
+  "input": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@fast-production-7d2a.up.railway.app:443?path=%2Fws%2F5163efd8-af8b-4275-965c-6e44be2932aa%2Fextra&type=ws&host=fast-production-7d2a.up.railway.app&security=tls&sni=fast-production-7d2a.up.railway.app#DeepPath",
+  "expected": {
+   "uuid": "5163efd8-af8b-4275-965c-6e44be2932aa",
+   "address": "fast-production-7d2a.up.railway.app",
+   "port": 443,
+   "domain": "fast-production-7d2a.up.railway.app",
+   "path": "/ws/5163efd8-af8b-4275-965c-6e44be2932aa/extra",
+   "security": "tls",
+   "type": "ws",
+   "name": "DeepPath"
+  }
+ },
+ {
+  "input": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@fast-production-7d2a.up.railway.app:443?security=tls&sni=core-production-93fa.up.railway.app&type=ws&host=fast-production-7d2a.up.railway.app&path=%2Fws#SniDiffers",
+  "expected": {
+   "uuid": "5163efd8-af8b-4275-965c-6e44be2932aa",
+   "address": "fast-production-7d2a.up.railway.app",
+   "port": 443,
+   "domain": "core-production-93fa.up.railway.app",
+   "path": "/ws",
+   "security": "tls",
+   "type": "ws",
+   "name": "SniDiffers"
+  }
+ },
+ {
+  "input": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@fast-production-7d2a.up.railway.app:443?security=tls&sni=fast-production-7d2a.up.railway.app&type=ws&host=fast-production-7d2a.up.railway.app&path=%2Fws",
+  "expected": {
+   "uuid": "5163efd8-af8b-4275-965c-6e44be2932aa",
+   "address": "fast-production-7d2a.up.railway.app",
+   "port": 443,
+   "domain": "fast-production-7d2a.up.railway.app",
+   "path": "/ws",
+   "security": "tls",
+   "type": "ws",
+   "name": "Clean Railway"
+  }
+ },
+ {
+  "input": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@fast-production-7d2a.up.railway.app:443?encryption=none&security=tls&sni=fast-production-7d2a.up.railway.app&fp=firefox&alpn=h2&type=ws&host=fast-production-7d2a.up.railway.app&path=%2Fws#FpFirefox",
+  "expected": {
+   "uuid": "5163efd8-af8b-4275-965c-6e44be2932aa",
+   "address": "fast-production-7d2a.up.railway.app",
+   "port": 443,
+   "domain": "fast-production-7d2a.up.railway.app",
+   "path": "/ws",
+   "security": "tls",
+   "type": "ws",
+   "name": "FpFirefox"
+  }
+ },
+ {
+  "input": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@a1-b2-c3.up.railway.app:443?security=tls&sni=a1-b2-c3.up.railway.app&type=ws&host=a1-b2-c3.up.railway.app&path=%2Fws%2F5163efd8-af8b-4275-965c-6e44be2932aa#Dashed",
+  "expected": {
+   "uuid": "5163efd8-af8b-4275-965c-6e44be2932aa",
+   "address": "a1-b2-c3.up.railway.app",
+   "port": 443,
+   "domain": "a1-b2-c3.up.railway.app",
+   "path": "/ws/5163efd8-af8b-4275-965c-6e44be2932aa",
+   "security": "tls",
+   "type": "ws",
+   "name": "Dashed"
+  }
+ }
+]

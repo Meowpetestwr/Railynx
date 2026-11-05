@@ -1,0 +1,131 @@
+[
+ {
+  "base_link": "vless://11111111-2222-3333-4444-555555555555@fast-a.up.railway.app:443?encryption=none&security=tls&sni=fast-a.up.railway.app&type=ws&host=fast-a.up.railway.app&path=%2Fws#My%20Railway%20Config",
+  "ip": "69.46.46.10",
+  "expected": "vless://11111111-2222-3333-4444-555555555555@69.46.46.10:443?encryption=none&security=tls&sni=fast-a.up.railway.app&fp=chrome&alpn=http%2F1.1&type=ws&host=fast-a.up.railway.app&path=%2Fws#My%20Railway%20Config"
+ },
+ {
+  "base_link": "vless://11111111-2222-3333-4444-555555555555@fast-a.up.railway.app:443?encryption=none&security=tls&sni=fast-a.up.railway.app&type=ws&host=fast-a.up.railway.app&path=%2Fws#My%20Railway%20Config",
+  "ip": "10.0.0.1",
+  "expected": "vless://11111111-2222-3333-4444-555555555555@10.0.0.1:443?encryption=none&security=tls&sni=fast-a.up.railway.app&fp=chrome&alpn=http%2F1.1&type=ws&host=fast-a.up.railway.app&path=%2Fws#My%20Railway%20Config"
+ },
+ {
+  "base_link": "vless://11111111-2222-3333-4444-555555555555@fast-b.up.railway.app:443?security=tls&sni=fast-b.up.railway.app&type=ws&path=%2Fother#%DA%A9%D8%A7%D9%86%D9%81%DB%8C%DA%AF%20%D9%85%D9%86",
+  "ip": "69.46.46.10",
+  "expected": "vless://11111111-2222-3333-4444-555555555555@69.46.46.10:443?encryption=none&security=tls&sni=fast-b.up.railway.app&fp=chrome&alpn=http%2F1.1&type=ws&host=fast-b.up.railway.app&path=%2Fother#%DA%A9%D8%A7%D9%86%D9%81%DB%8C%DA%AF%20%D9%85%D9%86"
+ },
+ {
+  "base_link": "vless://11111111-2222-3333-4444-555555555555@fast-b.up.railway.app:443?security=tls&sni=fast-b.up.railway.app&type=ws&path=%2Fother#%DA%A9%D8%A7%D9%86%D9%81%DB%8C%DA%AF%20%D9%85%D9%86",
+  "ip": "10.0.0.1",
+  "expected": "vless://11111111-2222-3333-4444-555555555555@10.0.0.1:443?encryption=none&security=tls&sni=fast-b.up.railway.app&fp=chrome&alpn=http%2F1.1&type=ws&host=fast-b.up.railway.app&path=%2Fother#%DA%A9%D8%A7%D9%86%D9%81%DB%8C%DA%AF%20%D9%85%D9%86"
+ },
+ {
+  "base_link": "vless://11111111-2222-3333-4444-555555555555@fast-production-b6e1.up.railway.app:443?encryption=none&security=tls&sni=fast-production-b6e1.up.railway.app&fp=chrome&alpn=http%2F1.1&type=ws&host=fast-production-b6e1.up.railway.app&path=%2Fws%2F11111111-2222-3333-4444-555555555555#My%20Railway%20Config",
+  "ip": "69.46.46.10",
+  "expected": "vless://11111111-2222-3333-4444-555555555555@69.46.46.10:443?encryption=none&security=tls&sni=fast-production-b6e1.up.railway.app&fp=chrome&alpn=http%2F1.1&type=ws&host=fast-production-b6e1.up.railway.app&path=%2Fws%2F11111111-2222-3333-4444-555555555555#My%20Railway%20Config"
+ },
+ {
+  "base_link": "vless://11111111-2222-3333-4444-555555555555@fast-production-b6e1.up.railway.app:443?encryption=none&security=tls&sni=fast-production-b6e1.up.railway.app&fp=chrome&alpn=http%2F1.1&type=ws&host=fast-production-b6e1.up.railway.app&path=%2Fws%2F11111111-2222-3333-4444-555555555555#My%20Railway%20Config",
+  "ip": "10.0.0.1",
+  "expected": "vless://11111111-2222-3333-4444-555555555555@10.0.0.1:443?encryption=none&security=tls&sni=fast-production-b6e1.up.railway.app&fp=chrome&alpn=http%2F1.1&type=ws&host=fast-production-b6e1.up.railway.app&path=%2Fws%2F11111111-2222-3333-4444-555555555555#My%20Railway%20Config"
+ },
+ {
+  "base_fields": {
+   "uuid": "11111111-2222-3333-4444-555555555555",
+   "address": "h",
+   "port": 8443,
+   "domain": "d.example",
+   "path": "ws path/é",
+   "security": "tls",
+   "type": "ws",
+   "name": "N ame/é+!'()*"
+  },
+  "ip": "1.2.3.4",
+  "expected": "vless://11111111-2222-3333-4444-555555555555@1.2.3.4:8443?encryption=none&security=tls&sni=d.example&fp=chrome&alpn=http%2F1.1&type=ws&host=d.example&path=%2Fws%20path%2F%C3%A9#N%20ame%2F%C3%A9%2B!'()*"
+ },
+ {
+  "base_link": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@core-production-93fa.up.railway.app:443?encryption=none&security=tls&sni=core-production-93fa.up.railway.app&fp=chrome&alpn=http%2F1.1&type=ws&host=core-production-93fa.up.railway.app&path=%2Fws%2F5163efd8-af8b-4275-965c-6e44be2932aa#%F0%9F%87%B3%F0%9F%87%B1Netherlands%20%2304",
+  "ip": "69.46.46.10",
+  "expected": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@69.46.46.10:443?encryption=none&security=tls&sni=core-production-93fa.up.railway.app&fp=chrome&alpn=http%2F1.1&type=ws&host=core-production-93fa.up.railway.app&path=%2Fws%2F5163efd8-af8b-4275-965c-6e44be2932aa#%F0%9F%87%B3%F0%9F%87%B1Netherlands%20%2304"
+ },
+ {
+  "base_link": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@fast-production-7d2a.up.railway.app:443?encryption=none&security=tls&sni=fast-production-7d2a.up.railway.app&type=ws&host=fast-production-7d2a.up.railway.app&path=%2F#RootPath",
+  "ip": "69.46.46.10",
+  "expected": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@69.46.46.10:443?encryption=none&security=tls&sni=fast-production-7d2a.up.railway.app&fp=chrome&alpn=http%2F1.1&type=ws&host=fast-production-7d2a.up.railway.app&path=%2F#RootPath"
+ },
+ {
+  "base_link": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@fast-production-7d2a.up.railway.app:443?security=tls&sni=fast-production-7d2a.up.railway.app&type=ws&host=fast-production-7d2a.up.railway.app&path=ws#NoSlashPath",
+  "ip": "69.46.46.10",
+  "expected": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@69.46.46.10:443?encryption=none&security=tls&sni=fast-production-7d2a.up.railway.app&fp=chrome&alpn=http%2F1.1&type=ws&host=fast-production-7d2a.up.railway.app&path=%2Fws#NoSlashPath"
+ },
+ {
+  "base_link": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@fast-production-7d2a.up.railway.app:443?security=tls&type=ws&host=fast-production-7d2a.up.railway.app&path=%2Fws#NoSni",
+  "ip": "69.46.46.10",
+  "expected": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@69.46.46.10:443?encryption=none&security=tls&sni=fast-production-7d2a.up.railway.app&fp=chrome&alpn=http%2F1.1&type=ws&host=fast-production-7d2a.up.railway.app&path=%2Fws#NoSni"
+ },
+ {
+  "base_link": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@fast-production-7d2a.up.railway.app:443?security=tls&sni=fast-production-7d2a.up.railway.app&type=ws&path=%2Fws#NoHost",
+  "ip": "69.46.46.10",
+  "expected": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@69.46.46.10:443?encryption=none&security=tls&sni=fast-production-7d2a.up.railway.app&fp=chrome&alpn=http%2F1.1&type=ws&host=fast-production-7d2a.up.railway.app&path=%2Fws#NoHost"
+ },
+ {
+  "base_link": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@fast-production-7d2a.up.railway.app:443?security=tls&type=ws&path=%2Fws#NeitherSniNorHost",
+  "ip": "69.46.46.10",
+  "expected": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@69.46.46.10:443?encryption=none&security=tls&sni=fast-production-7d2a.up.railway.app&fp=chrome&alpn=http%2F1.1&type=ws&host=fast-production-7d2a.up.railway.app&path=%2Fws#NeitherSniNorHost"
+ },
+ {
+  "base_link": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@fast-production-7d2a.up.railway.app:443?security=tls&sni=&type=ws&host=fast-production-7d2a.up.railway.app&path=%2Fws#EmptySni",
+  "ip": "69.46.46.10",
+  "expected": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@69.46.46.10:443?encryption=none&security=tls&sni=fast-production-7d2a.up.railway.app&fp=chrome&alpn=http%2F1.1&type=ws&host=fast-production-7d2a.up.railway.app&path=%2Fws#EmptySni"
+ },
+ {
+  "base_link": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@fast-production-7d2a.up.railway.app:8443?security=tls&sni=fast-production-7d2a.up.railway.app&type=ws&host=fast-production-7d2a.up.railway.app&path=%2Fws#Port8443",
+  "ip": "69.46.46.10",
+  "expected": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@69.46.46.10:8443?encryption=none&security=tls&sni=fast-production-7d2a.up.railway.app&fp=chrome&alpn=http%2F1.1&type=ws&host=fast-production-7d2a.up.railway.app&path=%2Fws#Port8443"
+ },
+ {
+  "base_link": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@fast-production-7d2a.up.railway.app?security=tls&sni=fast-production-7d2a.up.railway.app&type=ws&host=fast-production-7d2a.up.railway.app&path=%2Fws#NoPort",
+  "ip": "69.46.46.10",
+  "expected": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@69.46.46.10:443?encryption=none&security=tls&sni=fast-production-7d2a.up.railway.app&fp=chrome&alpn=http%2F1.1&type=ws&host=fast-production-7d2a.up.railway.app&path=%2Fws#NoPort"
+ },
+ {
+  "base_link": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@fast-production-7d2a.up.railway.app:443?security=none&sni=fast-production-7d2a.up.railway.app&type=ws&host=fast-production-7d2a.up.railway.app&path=%2Fws#SecurityNone",
+  "ip": "69.46.46.10",
+  "expected": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@69.46.46.10:443?encryption=none&security=none&sni=fast-production-7d2a.up.railway.app&fp=chrome&alpn=http%2F1.1&type=ws&host=fast-production-7d2a.up.railway.app&path=%2Fws#SecurityNone"
+ },
+ {
+  "base_link": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@fast-production-7d2a.up.railway.app:443?security=tls&sni=fast-production-7d2a.up.railway.app&type=ws&host=fast-production-7d2a.up.railway.app&path=%2Fws&flow=xtls-rprx-vision&pbk=abc123&sid=00#Extras",
+  "ip": "69.46.46.10",
+  "expected": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@69.46.46.10:443?encryption=none&security=tls&sni=fast-production-7d2a.up.railway.app&fp=chrome&alpn=http%2F1.1&type=ws&host=fast-production-7d2a.up.railway.app&path=%2Fws#Extras"
+ },
+ {
+  "base_link": "vless://5163EFD8-AF8B-4275-965C-6E44BE2932AA@fast-production-7d2a.up.railway.app:443?security=tls&sni=fast-production-7d2a.up.railway.app&type=ws&host=fast-production-7d2a.up.railway.app&path=%2Fws#UpperUuid",
+  "ip": "69.46.46.10",
+  "expected": "vless://5163EFD8-AF8B-4275-965C-6E44BE2932AA@69.46.46.10:443?encryption=none&security=tls&sni=fast-production-7d2a.up.railway.app&fp=chrome&alpn=http%2F1.1&type=ws&host=fast-production-7d2a.up.railway.app&path=%2Fws#UpperUuid"
+ },
+ {
+  "base_link": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@fast-production-7d2a.up.railway.app:443?path=%2Fws%2F5163efd8-af8b-4275-965c-6e44be2932aa%2Fextra&type=ws&host=fast-production-7d2a.up.railway.app&security=tls&sni=fast-production-7d2a.up.railway.app#DeepPath",
+  "ip": "69.46.46.10",
+  "expected": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@69.46.46.10:443?encryption=none&security=tls&sni=fast-production-7d2a.up.railway.app&fp=chrome&alpn=http%2F1.1&type=ws&host=fast-production-7d2a.up.railway.app&path=%2Fws%2F5163efd8-af8b-4275-965c-6e44be2932aa%2Fextra#DeepPath"
+ },
+ {
+  "base_link": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@fast-production-7d2a.up.railway.app:443?security=tls&sni=core-production-93fa.up.railway.app&type=ws&host=fast-production-7d2a.up.railway.app&path=%2Fws#SniDiffers",
+  "ip": "69.46.46.10",
+  "expected": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@69.46.46.10:443?encryption=none&security=tls&sni=core-production-93fa.up.railway.app&fp=chrome&alpn=http%2F1.1&type=ws&host=core-production-93fa.up.railway.app&path=%2Fws#SniDiffers"
+ },
+ {
+  "base_link": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@fast-production-7d2a.up.railway.app:443?security=tls&sni=fast-production-7d2a.up.railway.app&type=ws&host=fast-production-7d2a.up.railway.app&path=%2Fws",
+  "ip": "69.46.46.10",
+  "expected": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@69.46.46.10:443?encryption=none&security=tls&sni=fast-production-7d2a.up.railway.app&fp=chrome&alpn=http%2F1.1&type=ws&host=fast-production-7d2a.up.railway.app&path=%2Fws#Clean%20Railway"
+ },
+ {
+  "base_link": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@fast-production-7d2a.up.railway.app:443?encryption=none&security=tls&sni=fast-production-7d2a.up.railway.app&fp=firefox&alpn=h2&type=ws&host=fast-production-7d2a.up.railway.app&path=%2Fws#FpFirefox",
+  "ip": "69.46.46.10",
+  "expected": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@69.46.46.10:443?encryption=none&security=tls&sni=fast-production-7d2a.up.railway.app&fp=chrome&alpn=http%2F1.1&type=ws&host=fast-production-7d2a.up.railway.app&path=%2Fws#FpFirefox"
+ },
+ {
+  "base_link": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@a1-b2-c3.up.railway.app:443?security=tls&sni=a1-b2-c3.up.railway.app&type=ws&host=a1-b2-c3.up.railway.app&path=%2Fws%2F5163efd8-af8b-4275-965c-6e44be2932aa#Dashed",
+  "ip": "69.46.46.10",
+  "expected": "vless://5163efd8-af8b-4275-965c-6e44be2932aa@69.46.46.10:443?encryption=none&security=tls&sni=a1-b2-c3.up.railway.app&fp=chrome&alpn=http%2F1.1&type=ws&host=a1-b2-c3.up.railway.app&path=%2Fws%2F5163efd8-af8b-4275-965c-6e44be2932aa#Dashed"
+ }
+]

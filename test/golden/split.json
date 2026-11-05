@@ -1,0 +1,61 @@
+[
+ {
+  "input": "",
+  "expected": []
+ },
+ {
+  "input": "   \n  ",
+  "expected": []
+ },
+ {
+  "input": "vless://11111111-2222-3333-4444-555555555555@fast-a.up.railway.app:443?encryption=none&security=tls&sni=fast-a.up.railway.app&type=ws&host=fast-a.up.railway.app&path=%2Fws#My%20Railway%20Config\nvless://11111111-2222-3333-4444-555555555555@fast-b.up.railway.app:443?security=tls&sni=fast-b.up.railway.app&type=ws&path=%2Fother#%DA%A9%D8%A7%D9%86%D9%81%DB%8C%DA%AF%20%D9%85%D9%86\n",
+  "expected": [
+   "vless://11111111-2222-3333-4444-555555555555@fast-a.up.railway.app:443?encryption=none&security=tls&sni=fast-a.up.railway.app&type=ws&host=fast-a.up.railway.app&path=%2Fws#My%20Railway%20Config",
+   "vless://11111111-2222-3333-4444-555555555555@fast-b.up.railway.app:443?security=tls&sni=fast-b.up.railway.app&type=ws&path=%2Fother#%DA%A9%D8%A7%D9%86%D9%81%DB%8C%DA%AF%20%D9%85%D9%86"
+  ]
+ },
+ {
+  "input": "vless://11111111-2222-3333-4444-555555555555@fast-a.up.railway.app:443?encryption=none&security=tls&sni=fast-a.up.railway.app&type=ws&host=fast-a.up.railway.app&path=%2Fws#My%20Railway%20Configvless://11111111-2222-3333-4444-555555555555@fast-b.up.railway.app:443?security=tls&sni=fast-b.up.railway.app&type=ws&path=%2Fother#%DA%A9%D8%A7%D9%86%D9%81%DB%8C%DA%AF%20%D9%85%D9%86",
+  "expected": [
+   "vless://11111111-2222-3333-4444-555555555555@fast-a.up.railway.app:443?encryption=none&security=tls&sni=fast-a.up.railway.app&type=ws&host=fast-a.up.railway.app&path=%2Fws#My%20Railway%20Config",
+   "vless://11111111-2222-3333-4444-555555555555@fast-b.up.railway.app:443?security=tls&sni=fast-b.up.railway.app&type=ws&path=%2Fother#%DA%A9%D8%A7%D9%86%D9%81%DB%8C%DA%AF%20%D9%85%D9%86"
+  ]
+ },
+ {
+  "input": "vless://11111111-2222-3333-4444-555555555555@fast-a.up.railway.app:443?encryption=none&security=tls&sni=fast-a.up.railway.app&type=ws&host=fast-a.up.railway.app&path=%2Fws#My%20Railway%20Config\r\nvless://11111111-2222-3333-4444-555555555555@fast-b.up.railway.app:443?security=tls&sni=fast-b.up.railway.app&type=ws&path=%2Fother#%DA%A9%D8%A7%D9%86%D9%81%DB%8C%DA%AF%20%D9%85%D9%86",
+  "expected": [
+   "vless://11111111-2222-3333-4444-555555555555@fast-a.up.railway.app:443?encryption=none&security=tls&sni=fast-a.up.railway.app&type=ws&host=fast-a.up.railway.app&path=%2Fws#My%20Railway%20Config",
+   "vless://11111111-2222-3333-4444-555555555555@fast-b.up.railway.app:443?security=tls&sni=fast-b.up.railway.app&type=ws&path=%2Fother#%DA%A9%D8%A7%D9%86%D9%81%DB%8C%DA%AF%20%D9%85%D9%86"
+  ]
+ },
+ {
+  "input": "vless://11111111-2222-3333-4444-555555555555@fast-a.up.railway.app:443?encryption=none&security=tls&sni=fast-a.up.railway.app&type=ws&host=fast-a.up.railway.app&path=%2Fws#My%20Railway%20Config vless://11111111-2222-3333-4444-555555555555@fast-b.up.railway.app:443?security=tls&sni=fast-b.up.railway.app&type=ws&path=%2Fother#%DA%A9%D8%A7%D9%86%D9%81%DB%8C%DA%AF%20%D9%85%D9%86",
+  "expected": [
+   "vless://11111111-2222-3333-4444-555555555555@fast-a.up.railway.app:443?encryption=none&security=tls&sni=fast-a.up.railway.app&type=ws&host=fast-a.up.railway.app&path=%2Fws#My%20Railway%20Config",
+   "vless://11111111-2222-3333-4444-555555555555@fast-b.up.railway.app:443?security=tls&sni=fast-b.up.railway.app&type=ws&path=%2Fother#%DA%A9%D8%A7%D9%86%D9%81%DB%8C%DA%AF%20%D9%85%D9%86"
+  ]
+ },
+ {
+  "input": "vless://11111111-2222-3333-4444-555555555555@fast-a.up.railway.app:443?encryption=none&security=tls&sni=fast-a.up.railway.app&type=ws&host=fast-a.up.railway.app&path=%2Fws#My%20Railway%20Config\u000bvless://11111111-2222-3333-4444-555555555555@fast-b.up.railway.app:443?security=tls&sni=fast-b.up.railway.app&type=ws&path=%2Fother#%DA%A9%D8%A7%D9%86%D9%81%DB%8C%DA%AF%20%D9%85%D9%86",
+  "expected": [
+   "vless://11111111-2222-3333-4444-555555555555@fast-a.up.railway.app:443?encryption=none&security=tls&sni=fast-a.up.railway.app&type=ws&host=fast-a.up.railway.app&path=%2Fws#My%20Railway%20Config",
+   "vless://11111111-2222-3333-4444-555555555555@fast-b.up.railway.app:443?security=tls&sni=fast-b.up.railway.app&type=ws&path=%2Fother#%DA%A9%D8%A7%D9%86%D9%81%DB%8C%DA%AF%20%D9%85%D9%86"
+  ]
+ },
+ {
+  "input": "text before vless://11111111-2222-3333-4444-555555555555@fast-a.up.railway.app:443?encryption=none&security=tls&sni=fast-a.up.railway.app&type=ws&host=fast-a.up.railway.app&path=%2Fws#My%20Railway%20Config   \t trailing\nnext line",
+  "expected": [
+   "vless://11111111-2222-3333-4444-555555555555@fast-a.up.railway.app:443?encryption=none&security=tls&sni=fast-a.up.railway.app&type=ws&host=fast-a.up.railway.app&path=%2Fws#My%20Railway%20Config   \t trailing"
+  ]
+ },
+ {
+  "input": "vless://\nvless://11111111-2222-3333-4444-555555555555@h.example",
+  "expected": [
+   "vless://11111111-2222-3333-4444-555555555555@h.example"
+  ]
+ },
+ {
+  "input": "no scheme here",
+  "expected": []
+ }
+]

@@ -1,0 +1,40 @@
+name: railway_clean_ip_scanner
+description: Railynx — probe Railway endpoints end-to-end, keep the ones that answer, and turn them into ready configs. One codebase for Android and Windows.
+publish_to: 'none'
+version: 2.1.0+13
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  path_provider: ^2.1.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  test: ^1.25.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/icon.png
+    - assets/cat.png
+  fonts:
+    - family: Manrope
+      fonts:
+        - asset: fonts/Manrope-500.ttf
+          weight: 500
+        - asset: fonts/Manrope-600.ttf
+          weight: 600
+        - asset: fonts/Manrope-700.ttf
+          weight: 700
+        - asset: fonts/Manrope-800.ttf
+          weight: 800
+    - family: JetBrains Mono
+      fonts:
+        - asset: fonts/JetBrainsMono-500.ttf
+          weight: 500
+        - asset: fonts/JetBrainsMono-600.ttf
+          weight: 600
